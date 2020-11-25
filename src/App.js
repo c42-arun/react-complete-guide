@@ -17,6 +17,8 @@ class App extends Component {
 
     // this.state.persons[0].name = "Xian"; // DON'T do this, React will not detect
 
+    // this merges this updated state slice with other existing slices
+    // for eg 'anotherState' slice is left unchanged
     this.setState({
       persons: [
         {name: 'Xian', age: 20 },

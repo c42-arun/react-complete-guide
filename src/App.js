@@ -12,7 +12,7 @@ class App extends Component {
     anotherState: 'Initial state'
   }
 
-  changeDetailsHandler = () => {
+  changeDetailsHandler = (newName) => {
     // console.log('Clciked!!');
 
     // this.state.persons[0].name = "Xian"; // DON'T do this, React will not detect
@@ -21,7 +21,7 @@ class App extends Component {
     // for eg 'anotherState' slice is left unchanged
     this.setState({
       persons: [
-        {name: 'Xian', age: 20 },
+        {name: newName, age: 20 },
         {name: 'Jay', age: 30 },
         {name: 'Jon', age: 33 },
       ],
@@ -33,10 +33,15 @@ class App extends Component {
       <div className="App">
         <h1>I'm a React app</h1>
 
-        <button onClick={this.changeDetailsHandler}>Update State</button>
+        <button onClick={this.changeDetailsHandler.bind(this, 'Chan')}>Update State</button>
 
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+
+        {/* pass functions in params */}
+        {/* another way to pass args in ES6, but inefficient w.r.t React's change detection */}
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} 
+          changeOnClick={() => this.changeDetailsHandler('Chan!!')}/>
+
         <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>Hobbies: Racing</Person>
       </div>
     );

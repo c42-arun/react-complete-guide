@@ -28,6 +28,22 @@ class App extends Component {
     });
   }
 
+  nameChangeHandler = (e) => {
+    // console.log('Clciked!!');
+
+    // this.state.persons[0].name = "Xian"; // DON'T do this, React will not detect
+
+    // this merges this updated state slice with other existing slices
+    // for eg 'anotherState' slice is left unchanged
+    this.setState({
+      persons: [
+        {name: e.target.value, age: 20 },
+        {name: 'Jay', age: 30 },
+        {name: 'Jon', age: 33 },
+      ],
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -35,7 +51,8 @@ class App extends Component {
 
         <button onClick={this.changeDetailsHandler.bind(this, 'Chan')}>Update State</button>
 
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}
+          nameChangeHandler={this.nameChangeHandler}/>
 
         {/* pass functions in params */}
         {/* another way to pass args in ES6, but inefficient w.r.t React's change detection */}

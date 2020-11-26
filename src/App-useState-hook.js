@@ -9,11 +9,15 @@ const app = (props) => {
       { name: 'Arun', age: 20 },
       { name: 'Jay', age: 30 },
       { name: 'Jon', age: 40 },
-    ],
-    anotherState: 'Initial state'
+    ]
   });
 
-  console.log(personsState);
+  // in functional components best practice is to maintain different slices of states 
+  // with their own corresponding 'useState()' calls
+  // In effect useState() retuns the slice reference as return value
+  const [ anotherState, setAnotherState ] = useState('Initial other state');
+
+  console.log(personsState, anotherState);
 
   const changeDetailsHandler = () => {
     // console.log('Clciked!!');

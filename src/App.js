@@ -5,7 +5,7 @@ import Person from './Person/Person-functional'; // needs to be upper case Perso
 class App extends Component {
   state = {
     persons: [
-      {name: 'Arun', age: 20 },
+      {name: 'Arun', age: 28 },
       {name: 'Jay', age: 30 },
       {name: 'Jon', age: 40 },
     ],
@@ -21,7 +21,7 @@ class App extends Component {
     // for eg 'anotherState' slice is left unchanged
     this.setState({
       persons: [
-        {name: newName, age: 20 },
+        {name: newName, age: 25 },
         {name: 'Jay', age: 30 },
         {name: 'Jon', age: 33 },
       ],
@@ -37,7 +37,7 @@ class App extends Component {
     // for eg 'anotherState' slice is left unchanged
     this.setState({
       persons: [
-        {name: e.target.value, age: 20 },
+        {name: e.target.value, age: 25 },
         {name: 'Jay', age: 30 },
         {name: 'Jon', age: 33 },
       ],
@@ -63,15 +63,9 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}
-            nameChangeHandler={this.nameChangeHandler}/>
-
-          {/* pass functions in params */}
-          {/* another way to pass args in ES6, but inefficient w.r.t React's change detection */}
-          <Person name={this.state.persons[1].name} age={this.state.persons[1].age} 
-            changeOnClick={() => this.changeDetailsHandler('Chan!!')}/>
-
-          <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>Hobbies: Racing</Person>
+          {this.state.persons.map(person => {
+            return <Person name={person.name} age={person.age} />
+          })}
         </div>
       );
     }

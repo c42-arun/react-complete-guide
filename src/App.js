@@ -58,6 +58,24 @@ class App extends Component {
       cursor: 'pointer'
     }
 
+    let persons = null;
+
+    if (this.state.showPersons) {
+      persons = (
+        <div>
+          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}
+            nameChangeHandler={this.nameChangeHandler}/>
+
+          {/* pass functions in params */}
+          {/* another way to pass args in ES6, but inefficient w.r.t React's change detection */}
+          <Person name={this.state.persons[1].name} age={this.state.persons[1].age} 
+            changeOnClick={() => this.changeDetailsHandler('Chan!!')}/>
+
+          <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>Hobbies: Racing</Person>
+        </div>
+      );
+    }
+
     return (
       <div className="App">
         <h1>I'm a React app</h1>
@@ -66,20 +84,7 @@ class App extends Component {
           style={style}
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
           
-          {
-            this.state.showPersons ?
-            <div>
-              <Person name={this.state.persons[0].name} age={this.state.persons[0].age}
-                nameChangeHandler={this.nameChangeHandler}/>
-
-              {/* pass functions in params */}
-              {/* another way to pass args in ES6, but inefficient w.r.t React's change detection */}
-              <Person name={this.state.persons[1].name} age={this.state.persons[1].age} 
-                changeOnClick={() => this.changeDetailsHandler('Chan!!')}/>
-
-              <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>Hobbies: Racing</Person>
-            </div> : null
-          }
+          { persons }
 
       </div>
     );

@@ -9,44 +9,18 @@ class App extends Component {
       {name: 'Jay', age: 30 },
       {name: 'Jon', age: 40 },
     ],
-    anotherState: 'Initial state'
-  }
-
-  changeDetailsHandler = (newName) => {
-    // console.log('Clciked!!');
-
-    // this.state.persons[0].name = "Xian"; // DON'T do this, React will not detect
-
-    // this merges this updated state slice with other existing slices
-    // for eg 'anotherState' slice is left unchanged
-    this.setState({
-      persons: [
-        {name: newName, age: 25 },
-        {name: 'Jay', age: 30 },
-        {name: 'Jon', age: 33 },
-      ],
-    });
-  }
-
-  nameChangeHandler = (e) => {
-    // console.log('Clciked!!');
-
-    // this.state.persons[0].name = "Xian"; // DON'T do this, React will not detect
-
-    // this merges this updated state slice with other existing slices
-    // for eg 'anotherState' slice is left unchanged
-    this.setState({
-      persons: [
-        {name: e.target.value, age: 25 },
-        {name: 'Jay', age: 30 },
-        {name: 'Jon', age: 33 },
-      ],
-      showPersons: false
-    });
+    showPersons: false
   }
 
   togglePersonsHandler = () => {
     this.setState({showPersons: !this.state.showPersons});
+  }
+
+  deletePersonHandler = (personIndex) => {
+    const persons = this.state.persons;
+    persons.splice(personIndex, 1);
+
+    this.setState({ persons: persons});
   }
 
   render() {
@@ -63,8 +37,12 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map(person => {
-            return <Person name={person.name} age={person.age} />
+          {this.state.persons.map((person, index) => {
+            return <Person 
+                    key={index} 
+                    name={person.name} 
+                    age={person.age} 
+                    click={() => this.deletePersonHandler(index)} />
           })}
         </div>
       );

@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './App.css';
 import Person from './Person/Person'; // needs to be upper case Person as lower case elements are reserved for HTML elements
+
+const StyledButton = styled.button `
+      background-color: green;
+      font: inherit;
+      border: 1px solid blue;
+      padding: 8px;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: lightgreen;
+        color: black;
+      }
+`;
 
 class App extends Component {
   state = {
@@ -25,7 +39,7 @@ class App extends Component {
   }
 
   render() {
-    const style = {
+/*    const style = {
       backgroundColor: 'green',
       font: 'inherit',
       border: '1px solid blue',
@@ -35,7 +49,7 @@ class App extends Component {
         backgroundColor: 'lightgreen',
         color: 'black'
       }
-    }
+    }*/
 
     let persons = null;
 
@@ -52,11 +66,11 @@ class App extends Component {
         </div>
       );
       
-      style.backgroundColor = 'red'; // set dynamic style
+/*      style.backgroundColor = 'red'; // set dynamic style
       style[':hover'] = {
         backgroundColor: 'lightgreen',
         color: 'white'
-      };
+      };*/
     }
     
     /*let classes = ['red', 'bold'].join(' ');*/
@@ -73,9 +87,8 @@ class App extends Component {
       <div className="App">
         <p className={classes.join(' ')}>I'm a React app</p>
 
-        <button 
-          style={style}
-          onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <StyledButton 
+            onClick={this.togglePersonsHandler}>Toggle Persons</StyledButton>
           
           { persons }
 

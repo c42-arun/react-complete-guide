@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\projects\react-udemy\react-complete-guide" t="IncludeFlat">
+      <e p="node_modules\radium" t="IncludeRecursive" />
       <e p="node_modules\react" t="IncludeRecursive" />
       <e p="node_modules\react-dom" t="IncludeRecursive" />
       <e p="node_modules\react-scripts" t="IncludeRecursive" />

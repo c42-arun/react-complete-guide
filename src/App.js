@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 import './App.css';
-import Person from './Person/Person-functional'; // needs to be upper case Person as lower case elements are reserved for HTML elements
+import Person from './Person/Person'; // needs to be upper case Person as lower case elements are reserved for HTML elements
 
 class App extends Component {
   state = {
@@ -71,6 +71,7 @@ class App extends Component {
     }
     
     return (
+        <StyleRoot>
       <div className="App">
         <p className={classes.join(' ')}>I'm a React app</p>
 
@@ -81,6 +82,7 @@ class App extends Component {
           { persons }
 
       </div>
+        </StyleRoot>
     );
   }
 }

@@ -4,14 +4,14 @@ import './App.css';
 import Person from './Person/Person'; // needs to be upper case Person as lower case elements are reserved for HTML elements
 
 const StyledButton = styled.button `
-      background-color: green;
+      background-color: ${props => props.alt ? 'green' : 'red'};
       font: inherit;
       border: 1px solid blue;
       padding: 8px;
       cursor: pointer;
       
       &:hover {
-        background-color: lightgreen;
+        background-color: ${props => props.alt ? 'lightgreen' : 'salmon'};
         color: black;
       }
 `;
@@ -88,6 +88,7 @@ class App extends Component {
         <p className={classes.join(' ')}>I'm a React app</p>
 
         <StyledButton 
+            alt={this.state.showPersons}
             onClick={this.togglePersonsHandler}>Toggle Persons</StyledButton>
           
           { persons }

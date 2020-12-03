@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import cssClasses from './App.css';
 import Person from './Person/Person'; // needs to be upper case Person as lower case elements are reserved for HTML elements
 
 class App extends Component {
@@ -26,6 +26,7 @@ class App extends Component {
 
   render() {
     let persons = null;
+    const assignedButtonClasses = [];
 
     if (this.state.showPersons) {
       persons = (
@@ -39,23 +40,25 @@ class App extends Component {
           })}
         </div>
       );
+      
+      assignedButtonClasses.push(cssClasses.Red)
     }
     
-    const classes = [];
+    const assignedParaClasses = [];
     if (this.state.persons.length <=2) {
-      classes.push('red'); // classes = ['red']
+      assignedParaClasses.push(cssClasses.red); // classes = ['red']
     }
     
     if (this.state.persons.length <=1) {
-      classes.push('bold'); // classes = ['red', 'bold]
+      assignedParaClasses.push(cssClasses.bold); // classes = ['red', 'bold]
     }
     
     return (
-      <div className="App">
-        <p className={classes.join(' ')}>I'm a React app</p>
+      <div className={cssClasses.App}>
+        <p className={assignedParaClasses.join(' ')}>I'm a React app</p>
 
         <button 
-            className='button'
+            className={assignedButtonClasses.join(' ')}
             onClick={this.togglePersonsHandler}>Toggle Persons</button>
           
           { persons }

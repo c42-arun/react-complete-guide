@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\arun\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\arun\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_.19.00" t="ExcludeRecursive" />
-    <e p="C:\Users\arun\source\udemy-react\react-complete-guide" t="IncludeFlat">
+    <e p="C:\projects\react-udemy\react-complete-guide" t="IncludeFlat">
+      <e p="node_modules\autoprefixer" t="IncludeRecursive" />
+      <e p="node_modules\babel-core" t="IncludeRecursive" />
+      <e p="node_modules\babel-eslint" t="IncludeRecursive" />
+      <e p="node_modules\babel-jest" t="IncludeRecursive" />
+      <e p="node_modules\babel-loader" t="IncludeRecursive" />
+      <e p="node_modules\babel-preset-react-app" t="IncludeRecursive" />
+      <e p="node_modules\babel-runtime" t="IncludeRecursive" />
+      <e p="node_modules\case-sensitive-paths-webpack-plugin" t="IncludeRecursive" />
+      <e p="node_modules\chalk" t="IncludeRecursive" />
+      <e p="node_modules\css-loader" t="IncludeRecursive" />
+      <e p="node_modules\dotenv" t="IncludeRecursive" />
+      <e p="node_modules\dotenv-expand" t="IncludeRecursive" />
+      <e p="node_modules\eslint" t="IncludeRecursive" />
+      <e p="node_modules\eslint-config-react-app" t="IncludeRecursive" />
+      <e p="node_modules\eslint-loader" t="IncludeRecursive" />
+      <e p="node_modules\eslint-plugin-flowtype" t="IncludeRecursive" />
+      <e p="node_modules\eslint-plugin-import" t="IncludeRecursive" />
+      <e p="node_modules\eslint-plugin-jsx-a11y" t="IncludeRecursive" />
+      <e p="node_modules\eslint-plugin-react" t="IncludeRecursive" />
+      <e p="node_modules\extract-text-webpack-plugin" t="IncludeRecursive" />
+      <e p="node_modules\file-loader" t="IncludeRecursive" />
+      <e p="node_modules\fs-extra" t="IncludeRecursive" />
+      <e p="node_modules\html-webpack-plugin" t="IncludeRecursive" />
+      <e p="node_modules\jest" t="IncludeRecursive" />
+      <e p="node_modules\object-assign" t="IncludeRecursive" />
+      <e p="node_modules\postcss-flexbugs-fixes" t="IncludeRecursive" />
+      <e p="node_modules\postcss-loader" t="IncludeRecursive" />
+      <e p="node_modules\promise" t="IncludeRecursive" />
       <e p="node_modules\radium" t="IncludeRecursive" />
+      <e p="node_modules\raf" t="IncludeRecursive" />
       <e p="node_modules\react" t="IncludeRecursive" />
+      <e p="node_modules\react-dev-utils" t="IncludeRecursive" />
       <e p="node_modules\react-dom" t="IncludeRecursive" />
-      <e p="node_modules\react-scripts" t="IncludeRecursive" />
-      <e p="node_modules\styled-components" t="IncludeRecursive" />
+      <e p="node_modules\resolve" t="IncludeRecursive" />
+      <e p="node_modules\style-loader" t="IncludeRecursive" />
+      <e p="node_modules\sw-precache-webpack-plugin" t="IncludeRecursive" />
+      <e p="node_modules\url-loader" t="IncludeRecursive" />
+      <e p="node_modules\webpack" t="IncludeRecursive" />
+      <e p="node_modules\webpack-dev-server" t="IncludeRecursive" />
+      <e p="node_modules\webpack-manifest-plugin" t="IncludeRecursive" />
+      <e p="node_modules\whatwg-fetch" t="IncludeRecursive" />
     </e>
+    <e p="C:\Users\aramachandriya\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\aramachandriya\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_.19.00" t="ExcludeRecursive" />
   </component>
 </project>

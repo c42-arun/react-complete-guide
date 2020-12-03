@@ -24,6 +24,15 @@ class App extends Component {
     this.setState({ persons: persons});
   }
 
+  nameChangedHandler = (e, personIndex) => {
+    const personsCopy = [...this.state.persons];
+    
+    personsCopy[personIndex].name = e.target.value;
+    this.setState({
+      persons: personsCopy
+    });
+  }
+  
   render() {
     let persons = null;
     const assignedButtonClasses = [];
@@ -36,7 +45,9 @@ class App extends Component {
                     key={index} 
                     name={person.name} 
                     age={person.age} 
-                    click={() => this.deletePersonHandler(index)} />
+                    click={() => this.deletePersonHandler(index)}
+                    changeName = {(e) => this.nameChangedHandler(e, index)}
+            />
           })}
         </div>
       );

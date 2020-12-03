@@ -37,7 +37,6 @@
       <e p="node_modules\react-dom" t="IncludeRecursive" />
       <e p="node_modules\resolve" t="IncludeRecursive" />
       <e p="node_modules\style-loader" t="IncludeRecursive" />
-      <e p="node_modules\styled-components" t="IncludeRecursive" />
       <e p="node_modules\sw-precache-webpack-plugin" t="IncludeRecursive" />
       <e p="node_modules\url-loader" t="IncludeRecursive" />
       <e p="node_modules\webpack" t="IncludeRecursive" />

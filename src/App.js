@@ -25,9 +25,15 @@ class App extends Component {
   }
 
   nameChangedHandler = (e, personIndex) => {
-    const personsCopy = [...this.state.persons];
+    const personCopy = {
+      ...this.state.persons[personIndex]
+    };
+
+    personCopy.name = e.target.value;
     
-    personsCopy[personIndex].name = e.target.value;
+    const personsCopy = [...this.state.persons];
+    personsCopy[personIndex] = personCopy;
+    
     this.setState({
       persons: personsCopy
     });

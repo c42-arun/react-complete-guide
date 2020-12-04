@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cssClasses from './App.css';
-import Person from './Person/Person'; // needs to be upper case Person as lower case elements are reserved for HTML elements
+import Person from '../components/Persons/Person/Person'; // needs to be upper case Person as lower case elements are reserved for HTML elements
 
 class App extends Component {
   state = {

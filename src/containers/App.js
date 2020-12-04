@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import cssClasses from './App.css';
-import Person from '../components/Persons/Person/Person'; // needs to be upper case Person as lower case elements are reserved for HTML elements
+
+import Persons from "../components/Persons/Persons"; // needs to be upper case Person as lower case elements are reserved for HTML elements
 
 class App extends Component {
   state = {
@@ -46,15 +47,11 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((person, index) => {
-            return <Person 
-                    key={index} 
-                    name={person.name} 
-                    age={person.age} 
-                    click={() => this.deletePersonHandler(index)}
-                    changeName = {(e) => this.nameChangedHandler(e, index)}
-            />
-          })}
+          <Persons 
+              persons={this.state.persons}
+              clicked={this.deletePersonHandler}
+              changed={this.nameChangedHandler}
+          />
         </div>
       );
       

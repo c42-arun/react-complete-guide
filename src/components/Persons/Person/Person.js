@@ -1,5 +1,6 @@
 import React from 'react';
 
+import withClass from '../../../hoc/withClass';
 import Aux from '../../../hoc/Auxiliary';
 import cssClasses from './Person.css';
 
@@ -14,4 +15,4 @@ const person = (props) => {
     )
 }
 
-export default person;
+export default withClass(person, cssClasses.Person);

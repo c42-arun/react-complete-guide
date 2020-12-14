@@ -7,8 +7,12 @@ import cssClasses from './Person.css';
 import {Component} from "react/cjs/react.production.min";
 
 class Person extends Component {
+    constructor(props) {
+        super(props);
+        this.inputElementRef = React.createRef();
+    }
     componentDidMount() {
-        this.inputElement.focus();
+        this.inputElementRef.current.focus();
     }
     
     render()
@@ -18,7 +22,7 @@ class Person extends Component {
                 <p onClick={this.props.clicked}>I'm {this.props.name} and am {this.props.age} years old</p>
                 <p>{this.props.children}</p>
                 <input
-                    ref={(inputEl) => {this.inputElement = inputEl}}
+                    ref={this.inputElementRef}
                     type="text" onChange={this.props.changed} value={this.props.name}/>
             </Aux>
         )

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import withClass from '../../../hoc/withClass';
 import Aux from '../../../hoc/Auxiliary';
@@ -14,5 +15,12 @@ const person = (props) => {
         </Aux>
     )
 }
+
+person.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number,
+  clicked: PropTypes.func,
+  changed: PropTypes.func  
+};
 
 export default withClass(person, cssClasses.Person);

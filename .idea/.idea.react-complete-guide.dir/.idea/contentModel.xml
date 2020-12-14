@@ -26,6 +26,7 @@
       <e p="node_modules\postcss-flexbugs-fixes" t="IncludeRecursive" />
       <e p="node_modules\postcss-loader" t="IncludeRecursive" />
       <e p="node_modules\promise" t="IncludeRecursive" />
+      <e p="node_modules\prop-types" t="IncludeRecursive" />
       <e p="node_modules\radium" t="IncludeRecursive" />
       <e p="node_modules\raf" t="IncludeRecursive" />
       <e p="node_modules\react" t="IncludeRecursive" />

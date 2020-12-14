@@ -5,13 +5,26 @@ import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit"; // needs to be upper case Person as lower case elements are reserved for HTML elements
 
 class App extends Component {
+    showCockpit;
+    
+    constructor(props) {
+        super(props);
+        console.log('[App.js] constructor')
+        this.showCockpit = true;
+    }
+    
+    componentDidMount() {
+        console.log('[App.js] componentDidMount')
+    }
+
     state = {
         persons: [
             {name: 'Arun', age: 28},
             {name: 'Jay', age: 30},
             {name: 'Jon', age: 40},
         ],
-        showPersons: false
+        showPersons: false,
+        showCockpit: true
     }
 
     togglePersonsHandler = () => {
@@ -40,7 +53,7 @@ class App extends Component {
             persons: personsCopy
         });
     }
-  
+    
     render() {
         let persons = null;
 
@@ -55,12 +68,17 @@ class App extends Component {
 
         return (
             <div className={cssClasses.App}>
-                <Cockpit
-                    title={this.props.appTitle}
-                    persons={this.state.persons}
-                    showPersons={this.state.showPersons}
-                    clicked={this.togglePersonsHandler}
-                />
+                <button onClick={()=> this.setState({showCockpit: false})}>Remove Cockpit</button>
+                {
+                    this.state.showCockpit ?
+                        <Cockpit
+                            title={this.props.appTitle}
+                            persons={this.state.persons}
+                            showPersons={this.state.showPersons}
+                            clicked={this.togglePersonsHandler}
+                        /> : null
+                }
+
                 {persons}
             </div>
         );

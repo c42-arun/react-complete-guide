@@ -4,6 +4,8 @@ import cssClasses from './App.css';
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit"; // needs to be upper case Person as lower case elements are reserved for HTML elements
 
+import withClass from '../hoc/withClass';
+
 class App extends Component {
     showCockpit;
     
@@ -67,7 +69,7 @@ class App extends Component {
         }
 
         return (
-            <div className={cssClasses.App}>
+            <div>
                 <button onClick={()=> this.setState({showCockpit: false})}>Remove Cockpit</button>
                 {
                     this.state.showCockpit ?
@@ -85,4 +87,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withClass(App, cssClasses.App);

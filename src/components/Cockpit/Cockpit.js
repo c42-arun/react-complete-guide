@@ -1,8 +1,21 @@
-﻿import React from 'react';
+﻿import React, {useEffect, useRef} from 'react';
 
 import cssClasses from './Cockpit.css';
 
 const cockpit = (props) => {
+    const toggleBtnRef = useRef(null);
+    
+    useEffect(() => {
+        
+        toggleBtnRef.current.click();
+        
+        return () => {
+            console.log('Cockpit component cleanup code goes here...')
+        }
+        },
+        [] // empty dependency args means this useEffect only runs first time component is created
+    );
+    
     const assignedParaClasses = [];
     const assignedButtonClasses = [];
 
@@ -23,6 +36,7 @@ const cockpit = (props) => {
             <p className={assignedParaClasses.join(' ')}>{props.title}</p>
 
             <button
+                ref={toggleBtnRef}
                 className={assignedButtonClasses.join(' ')}
                 onClick={props.clicked}>Toggle Persons
             </button>
